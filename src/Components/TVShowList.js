@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {Grid} from 'semantic-ui-react';
+import TVShow from './TVShow'
 
 class TVShowList extends Component {
 
-  mapAllShows = () => {
+  mapAllShows = (props) => {
     if (!!props.searchTerm){
       props.shows.map((s) => {
         if (s.name.toLowerCase().includes(props.searchTerm)){
@@ -18,7 +19,7 @@ class TVShowList extends Component {
     return (
       <div className="TVShowList">
         <Grid>
-          {this.mapAllShows()}
+          {this.mapAllShows(this.props)}
         </Grid>
       </div>
     )
